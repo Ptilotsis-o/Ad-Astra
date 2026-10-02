@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv81b1d1fxar8"]
 
 [ext_resource type="Texture2D" uid="uid://dhaij8ld4bvjd" path="res://assets/game/structures/dangerTile.png" id="1_kjbw3"]
+[ext_resource type="Script" uid="uid://bvk0acdgpbhec" path="res://scripts/danger_tile.gd" id="1_ntv50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv0lb"]
 size = Vector2(18, 18)
@@ -8,6 +9,7 @@ size = Vector2(18, 18)
 [node name="dangerTile" type="RigidBody2D" unique_id=316275228]
 collision_mask = 3
 gravity_scale = 0.0
+script = ExtResource("1_ntv50")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510685638]
 texture = ExtResource("1_kjbw3")

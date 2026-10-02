@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var deceleration: float = 800.0
 @export var jump_velocity: float = -190.0
 
-
+@onready var spawnpoint: Marker2D = $"../../Marks/spawnpoint"
 @onready var sprite: Sprite2D = $Sprite2D
 
 var swimming : bool = false
@@ -18,6 +18,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i).get_collider()
+		if collision.has_method("on_body_entered"):
+			collision.on_body_entered(self)
+
 	if !swimming:
 		apply_gravity(delta)
 		handle_jump()
@@ -27,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	handle_horizontal_movement(delta)
 	update_sprite_direction()
 	move_and_slide()
+
 
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -87,3 +93,6 @@ func handle_space_pressed() -> void:
 		last_space_press_time = -1000
 	else:
 		last_space_press_time = current_time
+		
+func die() -> void:
+	global_position = spawnpoint.global_position
