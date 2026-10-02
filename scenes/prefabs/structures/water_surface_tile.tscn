@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvpxq8hdjm82c"]
+
+[ext_resource type="Texture2D" uid="uid://cpuf6af1pfm57" path="res://assets/game/structures/waterSurface.png" id="1_u6kwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr20o"]
+size = Vector2(18, 12)
+
+[node name="waterSurfaceTile" type="Area2D" unique_id=811982359]
+z_index = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1256851091]
+position = Vector2(0, 3)
+texture = ExtResource("1_u6kwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1681755901]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_nr20o")

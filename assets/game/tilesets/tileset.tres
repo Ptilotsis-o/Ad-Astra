@@ -1,9 +1,27 @@
 [gd_resource type="TileSet" format=3 uid="uid://dkowcf1ljh41j"]
 
-[ext_resource type="Texture2D" uid="uid://dbuhg261bftnm" path="res://assets/game/tilesets/tilemap.png" id="1_74lvc"]
+[ext_resource type="PackedScene" uid="uid://cfiecftkrymrq" path="res://scenes/prefabs/interactables/gate.tscn" id="1_60mv1"]
+[ext_resource type="PackedScene" uid="uid://dknog3skbl5j5" path="res://scenes/prefabs/structures/cage_tile.tscn" id="2_p66go"]
+[ext_resource type="PackedScene" uid="uid://cv81b1d1fxar8" path="res://scenes/prefabs/structures/danger_tile.tscn" id="3_f67m7"]
+[ext_resource type="PackedScene" uid="uid://bjwfwt63nlaug" path="res://scenes/prefabs/structures/gold_tile.tscn" id="4_di7qd"]
+[ext_resource type="PackedScene" uid="uid://batomiplr6twx" path="res://scenes/prefabs/structures/lock_tile.tscn" id="5_7k84x"]
+[ext_resource type="PackedScene" uid="uid://d2g8amsykjywu" path="res://scenes/prefabs/structures/transport_tile.tscn" id="6_w3mrc"]
+[ext_resource type="PackedScene" uid="uid://cvpxq8hdjm82c" path="res://scenes/prefabs/structures/water_surface_tile.tscn" id="7_8a00b"]
+[ext_resource type="PackedScene" uid="uid://d3k6yri14g1wd" path="res://scenes/prefabs/structures/water_tile.tscn" id="8_1bspl"]
+[ext_resource type="Texture2D" uid="uid://dbuhg261bftnm" path="res://assets/game/tilesets/tilemap.png" id="9_yu1tn"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d3h1t"]
+scenes/1/scene = ExtResource("1_60mv1")
+scenes/2/scene = ExtResource("2_p66go")
+scenes/3/scene = ExtResource("3_f67m7")
+scenes/4/scene = ExtResource("4_di7qd")
+scenes/5/scene = ExtResource("5_7k84x")
+scenes/6/scene = ExtResource("6_w3mrc")
+scenes/7/scene = ExtResource("7_8a00b")
+scenes/8/scene = ExtResource("8_1bspl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60m2d"]
-texture = ExtResource("1_74lvc")
+texture = ExtResource("9_yu1tn")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, 9, -9, -9, 9, -9, 9, 9)
@@ -107,4 +125,6 @@ texture_region_size = Vector2i(18, 18)
 [resource]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
 sources/2 = SubResource("TileSetAtlasSource_60m2d")
+sources/0 = SubResource("TileSetScenesCollectionSource_d3h1t")

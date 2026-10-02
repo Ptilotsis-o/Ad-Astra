@@ -10,12 +10,15 @@ extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-var flying : bool = false
+var swimming : bool = false
 var last_space_press_time := -1000
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 
-	if !flying:
+	if !swimming:
 		apply_gravity(delta)
 		handle_jump()
 	else:
@@ -80,7 +83,7 @@ func handle_space_pressed() -> void:
 	var elapsed_time := current_time - last_space_press_time
 
 	if elapsed_time <= double_press_interval * 1000.0:
-		flying = not flying
+		swimming = not swimming
 		last_space_press_time = -1000
 	else:
 		last_space_press_time = current_time

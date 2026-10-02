@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d2g8amsykjywu"]
+
+[ext_resource type="Texture2D" uid="uid://co5127i7ctnds" path="res://assets/game/structures/transportTile.png" id="1_lx6iv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr20o"]
+size = Vector2(18, 18)
+
+[node name="transportTile" type="RigidBody2D" unique_id=1981573923]
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=947662041]
+texture = ExtResource("1_lx6iv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171580749]
+shape = SubResource("RectangleShape2D_nr20o")

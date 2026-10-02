@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dknog3skbl5j5"]
+
+[ext_resource type="Texture2D" uid="uid://cd6sh1hwhfo11" path="res://assets/game/structures/cageTile.png" id="1_enhy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr20o"]
+size = Vector2(18, 18)
+
+[node name="cageTile" type="RigidBody2D" unique_id=680120003]
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=917597360]
+texture = ExtResource("1_enhy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738739402]
+shape = SubResource("RectangleShape2D_nr20o")
