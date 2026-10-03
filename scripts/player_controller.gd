@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var deceleration: float = 800.0
 @export var jump_velocity: float = -190.0
 
-@onready var spawnpoint: Marker2D = $"../../Marks/spawnpoint"
+@onready var spawnpoint: Marker2D = $"../../Marks/PlayerSpawnpoint"
 @onready var sprite: Sprite2D = $Sprite2D
 
 var swimming : bool = false
@@ -95,4 +95,4 @@ func handle_space_pressed() -> void:
 		last_space_press_time = current_time
 		
 func die() -> void:
-	global_position = spawnpoint.global_position
+	Eventbus.PlayerDied.emit()

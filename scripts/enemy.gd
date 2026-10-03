@@ -10,9 +10,6 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var sprite: Sprite2D = $Sprite2D
 
-func _ready() -> void:
-	add_to_group("player")
-
 func _physics_process(delta: float) -> void:
 
 	for i in get_slide_collision_count():
@@ -51,5 +48,9 @@ func update_sprite_direction() -> void:
 	if velocity.x != 0.0:
 		sprite.flip_h = velocity.x > 0.0
 		
+func on_body_entered(body: CharacterBody2D) -> void:
+	if body.is_in_group("player"):
+		body.die()
+
 func die() -> void:
 	queue_free()
