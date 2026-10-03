@@ -19,6 +19,7 @@ tile_map_data = PackedByteArray("AAD//wAAAgAAAAMAAAAAAAAAAgABAAIAAAD/////AgABAAE
 tile_set = ExtResource("1_l0eak")
 
 [node name="Collectibles" type="TileMapLayer" parent="TerrainTileMaps" unique_id=1170941041]
+tile_set = ExtResource("1_l0eak")
 
 [node name="ActorsAndCharacters" type="Node2D" parent="." unique_id=1038613085]
 
@@ -26,10 +27,20 @@ tile_set = ExtResource("1_l0eak")
 light_mask = 1
 visibility_layer = 1
 z_index = 1
-position = Vector2(70, 204)
+position = Vector2(81, 225)
 scale = Vector2(-1, 1)
+
+[node name="PrefabInstances" type="Node2D" parent="." unique_id=1175750130]
+
+[node name="Structures" type="Node2D" parent="PrefabInstances" unique_id=1776661317]
+
+[node name="Interactables" type="Node2D" parent="PrefabInstances" unique_id=758018050]
+
+[node name="Collectibles" type="Node2D" parent="PrefabInstances" unique_id=1611081950]
+
+[node name="guide" type="Node2D" parent="PrefabInstances" unique_id=748802225]
 
 [node name="Marks" type="Node2D" parent="." unique_id=475258856]
 
 [node name="PlayerSpawnpoint" type="Marker2D" parent="Marks" unique_id=1892601716]
-position = Vector2(70, 204)
+position = Vector2(81, 225)

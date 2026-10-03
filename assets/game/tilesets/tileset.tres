@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2g8amsykjywu" path="res://scenes/prefabs/structures/transport_tile.tscn" id="6_w3mrc"]
 [ext_resource type="PackedScene" uid="uid://cvpxq8hdjm82c" path="res://scenes/prefabs/structures/water_surface_tile.tscn" id="7_8a00b"]
 [ext_resource type="PackedScene" uid="uid://d3k6yri14g1wd" path="res://scenes/prefabs/structures/water_tile.tscn" id="8_1bspl"]
+[ext_resource type="PackedScene" uid="uid://n048ddiv2rp" path="res://scenes/prefabs/collectibles/coin.tscn" id="9_p66go"]
 [ext_resource type="Texture2D" uid="uid://dbuhg261bftnm" path="res://assets/game/tilesets/tilemap.png" id="9_yu1tn"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d3h1t"]
@@ -19,6 +20,7 @@ scenes/5/scene = ExtResource("5_7k84x")
 scenes/6/scene = ExtResource("6_w3mrc")
 scenes/7/scene = ExtResource("7_8a00b")
 scenes/8/scene = ExtResource("8_1bspl")
+scenes/9/scene = ExtResource("9_p66go")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60m2d"]
 texture = ExtResource("9_yu1tn")
