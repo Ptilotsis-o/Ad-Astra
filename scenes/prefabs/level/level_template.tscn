@@ -30,6 +30,8 @@ z_index = 1
 position = Vector2(81, 225)
 scale = Vector2(-1, 1)
 
+[node name="Camera2D" type="Camera2D" parent="ActorsAndCharacters/Player" unique_id=118931994]
+
 [node name="PrefabInstances" type="Node2D" parent="." unique_id=1175750130]
 
 [node name="Structures" type="Node2D" parent="PrefabInstances" unique_id=1776661317]

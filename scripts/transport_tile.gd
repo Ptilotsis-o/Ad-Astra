@@ -20,7 +20,7 @@ func _on_body_exited(body: Node2D) -> void:
 		_player_in_area = null
 
 func _unhandled_input(event: InputEvent) -> void:
-	if _player_in_area and not _cooldown and event.is_action_pressed("interact"):
+	if _player_in_area and not _cooldown and Input.is_action_pressed("interact"):
 		_teleport(_player_in_area)
 		get_viewport().set_input_as_handled()
 

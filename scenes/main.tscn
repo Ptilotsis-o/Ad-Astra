@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://j7jt48be856p"]
 
 [ext_resource type="Script" uid="uid://f3jllgn8jo4j" path="res://scripts/level_container.gd" id="1_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://b3ph6mn8stwk0" path="res://scenes/prefabs/level/level_test.tscn" id="2_tefeu"]
 [ext_resource type="Shader" uid="uid://bjkvgg76g2xkc" path="res://transition.gdshader" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://cty1fa68se2pt" path="res://assets/game/backgrounds/curtain.png" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://whgddp6eky47" path="res://scripts/curtain.gd" id="5_tefeu"]
@@ -38,8 +37,6 @@ shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="LevelContainer" type="Node2D" parent="." unique_id=138254447]
 script = ExtResource("1_tbgi4")
-
-[node name="LevelTest" parent="LevelContainer" unique_id=1749607724 instance=ExtResource("2_tefeu")]
 
 [node name="AnimationController" type="Node2D" parent="." unique_id=1200337801]
 

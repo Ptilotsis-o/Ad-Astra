@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://his0bgwfl8nx"]
+
+[ext_resource type="Script" uid="uid://v454henf66sg" path="res://scripts/guide.gd" id="1_xcmxq"]
+[ext_resource type="Texture2D" uid="uid://dthfyb8abm5w4" path="res://assets/game/interactables/guide.png" id="2_dpr5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv0lb"]
+size = Vector2(18, 18)
+
+[node name="Guide" type="Area2D" unique_id=261311493 node_paths=PackedStringArray("label")]
+collision_mask = 3
+script = ExtResource("1_xcmxq")
+label = NodePath("")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=774654914]
+texture = ExtResource("2_dpr5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866611580]
+shape = SubResource("RectangleShape2D_rv0lb")
