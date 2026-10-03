@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export_category("移动参数")
 @export var double_press_interval := 0.3
 @export var move_speed: float = 75.0
+@export var dash_speed: float = 400.0
 @export var acceleration: float = 600.0
 @export var deceleration: float = 800.0
 @export var jump_velocity: float = -190.0
@@ -11,7 +12,10 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 var swimming : bool = false
-var last_space_press_time := -1000
+var last_press_time := {
+	"move_left": -10000,
+	"move_right": -10000,
+}
 
 func _ready() -> void:
 	add_to_group("player")
@@ -81,18 +85,24 @@ func update_sprite_direction() -> void:
 		sprite.flip_h = velocity.x < 0.0
 		
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fly") and !event.is_echo():
-		handle_space_pressed()
+	if event.is_action_pressed("move_left"):
+		_try_dash(-1, "move_left", "move_right")
+	elif event.is_action_pressed("move_right"):
+		_try_dash(1, "move_right", "move_left")
 	
-func handle_space_pressed() -> void:
+func _try_dash(direction: int, action: String, opposite_action: String) -> void:
+	
 	var current_time := Time.get_ticks_msec()
-	var elapsed_time := current_time - last_space_press_time
+	var elapsed_time : int = current_time - last_press_time[action]
 
 	if elapsed_time <= double_press_interval * 1000.0:
-		swimming = not swimming
-		last_space_press_time = -1000
+		velocity.x = direction * dash_speed
+		move_and_slide()
+		last_press_time[action] = -10000
 	else:
-		last_space_press_time = current_time
+		last_press_time[action] = current_time
+
+	last_press_time[opposite_action] = -10000
 		
 func die() -> void:
 	Eventbus.PlayerDied.emit()
