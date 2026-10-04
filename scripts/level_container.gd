@@ -6,8 +6,9 @@ const LEVEL_01 = preload("res://scenes/prefabs/level/level_01.tscn")
 const LEVEL_02 = preload("res://scenes/prefabs/level/level_02.tscn")
 const LEVEL_03 = preload("res://scenes/prefabs/level/level_03.tscn")
 const LEVEL_04 = preload("res://scenes/prefabs/level/level_04.tscn")
+const LEVEL_END = preload("res://scenes/prefabs/level/level_end.tscn")
 
-const SceneList = [LEVEL_01, LEVEL_02, LEVEL_03, LEVEL_04]
+const SceneList = [LEVEL_01, LEVEL_02, LEVEL_03, LEVEL_04, LEVEL_END]
 
 var LevelIndex: int = 0
 var player: CharacterBody2D
