@@ -5,8 +5,9 @@ const LEVEL_TEMPLATE = preload("res://scenes/prefabs/level/level_template.tscn")
 const LEVEL_01 = preload("res://scenes/prefabs/level/level_01.tscn")
 const LEVEL_02 = preload("res://scenes/prefabs/level/level_02.tscn")
 const LEVEL_03 = preload("res://scenes/prefabs/level/level_03.tscn")
+const LEVEL_04 = preload("res://scenes/prefabs/level/level_04.tscn")
 
-const SceneList = [LEVEL_01, LEVEL_02, LEVEL_03]
+const SceneList = [LEVEL_01, LEVEL_02, LEVEL_03, LEVEL_04]
 
 var LevelIndex: int = 0
 var player: CharacterBody2D
@@ -31,3 +32,6 @@ func load_level(i: int) -> void:
 
 	var scene = SceneList[i].instantiate()
 	add_child(scene)
+	
+	Eventbus.gold = 0
+	Eventbus.key = 0

@@ -5,5 +5,5 @@ func _ready() -> void:
 
 func on_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("player"):
-		body.gold += 1
+		Eventbus.gold += 1
 		queue_free()

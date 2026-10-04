@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i).get_collider()
-		if collision.has_method("on_body_entered"):
+		if collision and collision.has_method("on_body_entered"):
 			collision.on_body_entered(self)
 
 	if !swimming:

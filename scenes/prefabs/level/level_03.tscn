@@ -42,6 +42,7 @@ scale = Vector2(-1, 1)
 [node name="transportTile2" parent="PrefabInstances/Structures" unique_id=242157289 instance=ExtResource("3_a7hcj")]
 position = Vector2(27, 81)
 self_id = 1
+target_id = 1
 
 [node name="transportTile" parent="PrefabInstances/Structures" unique_id=1594538191 instance=ExtResource("3_a7hcj")]
 position = Vector2(423, 225)
