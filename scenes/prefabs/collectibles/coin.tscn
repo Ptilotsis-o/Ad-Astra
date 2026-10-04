@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://n048ddiv2rp"]
 
+[ext_resource type="Script" uid="uid://e3tedom80vhv" path="res://scripts/coin.gd" id="1_krm0i"]
 [ext_resource type="Texture2D" uid="uid://co3kpldv36a2v" path="res://assets/game/collectibles/coin.png" id="1_mfpjg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sugp2"]
@@ -9,6 +10,7 @@ height = 12.0
 [node name="CoinGoldRound" type="Area2D" unique_id=1543147421 groups=["collectible"]]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_krm0i")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=44725997]
 texture_filter = 1

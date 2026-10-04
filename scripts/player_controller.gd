@@ -16,6 +16,7 @@ var last_press_time := {
 	"move_left": -10000,
 	"move_right": -10000,
 }
+var gold : int = 0
 
 func _ready() -> void:
 	add_to_group("player")

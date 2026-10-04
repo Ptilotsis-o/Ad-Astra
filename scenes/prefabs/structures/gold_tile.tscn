@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjwfwt63nlaug"]
 
 [ext_resource type="Texture2D" uid="uid://by2yh3mdwm8gr" path="res://assets/game/structures/goldTile.png" id="1_nhe68"]
+[ext_resource type="Script" uid="uid://7pfqxt8q5iam" path="res://scripts/gold_tile.gd" id="1_ta0a4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmn7c"]
 size = Vector2(18, 18)
@@ -8,6 +9,7 @@ size = Vector2(18, 18)
 [node name="goldTile" type="RigidBody2D" unique_id=381258649]
 collision_mask = 3
 gravity_scale = 0.0
+script = ExtResource("1_ta0a4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=376654029]
 texture = ExtResource("1_nhe68")
