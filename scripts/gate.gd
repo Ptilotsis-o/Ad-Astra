@@ -16,4 +16,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if _player_in_area and Input.is_action_just_pressed("interact"):
-		Eventbus.level_finished.emit()
+		Eventbus.level_finished.emit(global_position)

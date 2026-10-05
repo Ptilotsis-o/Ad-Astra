@@ -20,6 +20,7 @@ var gold : int = 0
 
 func _ready() -> void:
 	add_to_group("player")
+	Eventbus.PlayerReady.emit(global_position)
 
 func _physics_process(delta: float) -> void:
 
@@ -106,4 +107,4 @@ func _try_dash(direction: int, action: String, opposite_action: String) -> void:
 	last_press_time[opposite_action] = -10000
 		
 func die() -> void:
-	Eventbus.PlayerDied.emit()
+	Eventbus.PlayerDied.emit(global_position)

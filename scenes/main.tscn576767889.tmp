@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://j7jt48be856p"]
+
+[ext_resource type="Script" uid="uid://f3jllgn8jo4j" path="res://scripts/level_container.gd" id="1_tbgi4"]
+[ext_resource type="Shader" uid="uid://bjkvgg76g2xkc" path="res://transition.gdshader" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cty1fa68se2pt" path="res://assets/game/backgrounds/curtain.png" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://whgddp6eky47" path="res://scripts/curtain.gd" id="5_tefeu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
+shader = ExtResource("4_tbgi4")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 2
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/invert = false
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 64
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
+
+[node name="Main" type="Node2D" unique_id=2061129075]
+
+[node name="LevelContainer" type="Node2D" parent="." unique_id=138254447]
+script = ExtResource("1_tbgi4")
+
+[node name="AnimationController" type="Node2D" parent="." unique_id=1200337801]
+process_mode = 3
+
+[node name="curtain" type="Sprite2D" parent="AnimationController" unique_id=1474510572]
+self_modulate = Color(0, 0, 0, 1)
+top_level = true
+z_index = 10
+material = SubResource("ShaderMaterial_sugp2")
+position = Vector2(2.0000076, 1.0000076)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_o6xl0")
+script = ExtResource("5_tefeu")

@@ -1,32 +1,41 @@
 # 试验功能，未实现
 
 extends Sprite2D
-@export var player: CharacterBody2D
 
 var mat: ShaderMaterial = material
 
-func _process(delta: float) -> void:
-	return
-	
+func _ready() -> void:
+	visible = false
+	Eventbus.PlayerDied.connect(player_move)
+	Eventbus.PlayerReady.connect(player_arrive)
+	Eventbus.level_finished.connect(player_move)
+
+func player_move(posi : Vector2) ->void:
+	Eventbus.AnimationStarted.emit()
 	visible = true
-	var uv = get_player_uv(player)
+	global_position = posi
+	var uv = Vector2(0.5,0.5)
 	mat.set_shader_parameter("position",uv)
 	var tween := create_tween()
 	tween.tween_method(
 		func(v): mat.set_shader_parameter("progress", v),
-		0.0, 10.0, 1
-	)
-	await tween.finished 
-	
-	tween = create_tween()
-	tween.tween_method(
-		func(v): mat.set_shader_parameter("progress", v),
-		10.0, 0.0, 0.4
+		1.5, -0.5, 1
 	)
 	await tween.finished
-	
-	
-func get_player_uv(player: Node2D) -> Vector2:
-	var size = get_viewport().get_visible_rect().size
-	var pos = (player.global_position - (global_position- size/2) )
-	return 2*pos / size
+	visible = false
+	Eventbus.AnimationFinished.emit()
+
+func player_arrive(posi : Vector2) ->void:
+	Eventbus.AnimationStarted.emit()
+	visible = true
+	global_position = posi
+	var uv = Vector2(0.5,0.5)
+	mat.set_shader_parameter("position",uv)
+	var tween := create_tween()
+	tween.tween_method(
+		func(v): mat.set_shader_parameter("progress", v),
+		-0.5, 1.5, 1
+	)
+	await tween.finished
+	visible = false
+	Eventbus.AnimationFinished.emit()

@@ -17,16 +17,21 @@ var player: CharacterBody2D
 
 func _ready() -> void:
 	Eventbus.level_finished.connect(next_level)
-	Eventbus.PlayerDied.connect(restart)
+	Eventbus.PlayerDied.connect(player_died_restart)
 	load_level(LevelIndex)
 
-func restart() -> void:
+func player_died_restart(f) -> void:
+	get_tree().paused = true
+	await Eventbus.AnimationFinished
+	get_tree().paused = false
 	load_level(LevelIndex)
 
-func next_level() -> void:
+func next_level(f) -> void:
+	get_tree().paused = true
+	await Eventbus.AnimationFinished
+	get_tree().paused = false
 	LevelIndex += 1
-	if LevelIndex < len(SceneList):
-		load_level(LevelIndex)
+	load_level(LevelIndex)
 
 func load_level(i: int) -> void:
 	for child in get_children():

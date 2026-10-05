@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cty1fa68se2pt" path="res://assets/game/backgrounds/curtain.png" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://whgddp6eky47" path="res://scripts/curtain.gd" id="5_tefeu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rv0lb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sugp2"]
 shader = ExtResource("4_tbgi4")
 shader_parameter/use_sprite_alpha = true
 shader_parameter/use_transition_texture = false
@@ -30,7 +30,7 @@ shader_parameter/edges = 64
 shader_parameter/shape_feather = 0.1
 shader_parameter/sectors = 1
 shader_parameter/clock_feather = 0.0
-shader_parameter/progress = 10.0
+shader_parameter/progress = 0.0
 shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="Main" type="Node2D" unique_id=2061129075]
@@ -39,14 +39,14 @@ shader_parameter/progress_bias = Vector2(0, 0)
 script = ExtResource("1_tbgi4")
 
 [node name="AnimationController" type="Node2D" parent="." unique_id=1200337801]
+process_mode = 3
 
 [node name="curtain" type="Sprite2D" parent="AnimationController" unique_id=1474510572]
-visible = false
 self_modulate = Color(0, 0, 0, 1)
 top_level = true
 z_index = 10
-material = SubResource("ShaderMaterial_rv0lb")
-position = Vector2(132.5, 127)
-scale = Vector2(0.1, 0.1)
+material = SubResource("ShaderMaterial_sugp2")
+position = Vector2(2.0000076, 1.0000076)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_o6xl0")
 script = ExtResource("5_tefeu")

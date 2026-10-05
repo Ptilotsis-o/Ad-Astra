@@ -32,10 +32,10 @@ position = Vector2(45, 225)
 scale = Vector2(-1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="ActorsAndCharacters/Player" unique_id=118931994]
-limit_left = -36
-limit_top = -18
-limit_right = 468
-limit_bottom = 288
+limit_left = -35
+limit_top = -17
+limit_right = 469
+limit_bottom = 289
 
 [node name="PrefabInstances" type="Node2D" parent="." unique_id=1175750130]
 
