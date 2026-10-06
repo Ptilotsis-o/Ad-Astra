@@ -17,6 +17,7 @@ var last_press_time := {
 	"move_right": -10000,
 }
 var gold : int = 0
+var _dead : bool = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -107,4 +108,8 @@ func _try_dash(direction: int, action: String, opposite_action: String) -> void:
 	last_press_time[opposite_action] = -10000
 		
 func die() -> void:
+	if _dead:
+		return
+	_dead = true
+	sprite.texture = preload("res://assets/game/characters/playerDied.png")
 	Eventbus.PlayerDied.emit(global_position)

@@ -14,6 +14,7 @@ const SceneList = [LEVEL_01, LEVEL_02, LEVEL_03, LEVEL_04, LEVEL_05, LEVEL_END]
 
 var LevelIndex: int = 0
 var player: CharacterBody2D
+var _transitioning : bool = false
 
 func _ready() -> void:
 	Eventbus.level_finished.connect(next_level)
@@ -21,17 +22,25 @@ func _ready() -> void:
 	load_level(LevelIndex)
 
 func player_died_restart(f) -> void:
+	if _transitioning:
+		return
+	_transitioning = true
 	get_tree().paused = true
 	await Eventbus.AnimationFinished
 	get_tree().paused = false
 	load_level(LevelIndex)
+	_transitioning = false
 
 func next_level(f) -> void:
+	if _transitioning:
+		return
+	_transitioning = true
 	get_tree().paused = true
 	await Eventbus.AnimationFinished
 	get_tree().paused = false
 	LevelIndex += 1
 	load_level(LevelIndex)
+	_transitioning = false
 
 func load_level(i: int) -> void:
 	for child in get_children():

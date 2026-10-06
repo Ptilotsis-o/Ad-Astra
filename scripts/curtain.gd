@@ -27,6 +27,7 @@ func player_move(posi : Vector2) ->void:
 
 func player_arrive(posi : Vector2) ->void:
 	Eventbus.AnimationStarted.emit()
+	print("arrive ", posi)
 	visible = true
 	global_position = posi
 	var uv = Vector2(0.5,0.5)

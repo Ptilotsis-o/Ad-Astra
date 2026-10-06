@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Eventbus="*uid://csfyxpotax3po"
-_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [display]
 
