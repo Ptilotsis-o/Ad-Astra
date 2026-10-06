@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://d3k6yri14g1wd"]
 
 [ext_resource type="Texture2D" uid="uid://d1wp1loh1n74x" path="res://assets/game/structures/water.png" id="1_0lo51"]
+[ext_resource type="Script" uid="uid://bj8d6a21mheo5" path="res://scripts/water_tile.gd" id="1_v23ra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2g5i"]
 size = Vector2(18, 18)
 
 [node name="waterTile" type="Area2D" unique_id=44167250]
 z_index = 2
+collision_mask = 3
+script = ExtResource("1_v23ra")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=501401941]
 texture = ExtResource("1_0lo51")

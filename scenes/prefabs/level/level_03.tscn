@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjwfwt63nlaug" path="res://scenes/prefabs/structures/gold_tile.tscn" id="3_14ltm"]
 [ext_resource type="PackedScene" uid="uid://d2g8amsykjywu" path="res://scenes/prefabs/structures/transport_tile.tscn" id="3_a7hcj"]
 
-[node name="LevelTemplate" type="Node2D" unique_id=1749607724]
+[node name="Level03" type="Node2D" unique_id=1749607724]
 
 [node name="Background" type="Node2D" parent="." unique_id=2029732904]
 

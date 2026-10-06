@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1u8k6ny02t4y" path="res://scenes/prefabs/characters/player.tscn" id="2_su1es"]
 [ext_resource type="PackedScene" uid="uid://his0bgwfl8nx" path="res://scenes/prefabs/interactables/guide.tscn" id="3_su1es"]
 
-[node name="LevelTemplate" type="Node2D" unique_id=1749607724]
+[node name="LevelT02" type="Node2D" unique_id=1749607724]
 
 [node name="Background" type="Node2D" parent="." unique_id=2029732904]
 
